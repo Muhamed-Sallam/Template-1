@@ -1,0 +1,1349 @@
+/* common */
+/* 
+   -continer
+   -opacity hover
+   -generl header 
+   -section padding
+   -hover effect 1(left to right)
+   -hover effect (top to bootom)
+
+*/
+
+
+
+/* 
+ --Header
+ --Home sction
+ -- section header
+
+
+
+
+*/
+
+
+
+
+* {
+    /* هنا مدي للموقع كله اصفار عشان ميحطش من عنده مسافات اوغيرها  */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Css3 */
+
+}
+
+body {
+    /* body of page */
+    font-family: 'Varela Round', sans-serif;
+    /* height: 1600px; */
+}
+
+.clear {
+    /* معموله عشان اي اب يحس بالابناء  */
+    clear: both;
+}
+
+
+
+
+/* Generl */
+
+/*
+  الي حد ما الحاجات المتكرره في البروجيكت 
+    بحيث ترتب افكاري  
+
+*/
+
+
+
+:root {
+
+    --maincolor: red;
+    --color-black: #000;
+    --color-snow: #e8e8e8;
+
+}
+
+
+
+
+h1,
+h2,
+h3 {
+
+    font-family: montserrat, sans-serif;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+
+button {
+
+    font: inherit;
+    /* يرث الخط بتاع الفاملي */
+}
+
+.hover-opacity {
+    transition: opacity.1s;
+    /*  فقط opacity هنا بقوله اشتغل عل ال */
+
+}
+
+
+.hover-opacity:hover {
+    /* كلاس معمول اما اجي اشاور علي حاجا ينفذ  */
+
+    opacity: 0.8;
+
+}
+
+/* padding from top and bottom */
+
+.pd-y {
+    /* عشان تكون ثابته واخده مارجين وبادينج  */
+    padding: 60px;
+    /* margin-top: 20px; */
+}
+
+
+/* effect of element */
+
+
+.left-r {
+    /* parant*/
+    position: relative;
+
+}
+
+.left-r:after {
+    /* ebn el parnt*/
+    position: absolute;
+    content: "";
+    /* متنساش دي */
+    width: 0;
+    height: 100%;
+    background-color: rgb(50, 45, 45);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.8s;
+}
+
+
+.left-r:hover:after {
+    width: 100%;
+}
+
+.about-item:hover .title {
+    color: antiquewhite;
+}
+
+
+
+
+
+.top-b {
+
+    position: relative;
+}
+
+.top-b::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    /* background write here */
+    /* عشان يظهر تحت العنصر   */
+    z-index: -1;
+    background-color: var(--color-black);
+
+}
+
+.top-b:hover::after {
+    height: 100%;
+    /* z-index: 1; */
+
+}
+
+
+/* section header */
+
+
+.section-header {
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color-black);
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.line {
+
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(144, 144, 218);
+    margin: 10px auto 100px;
+
+}
+
+
+
+/* srat fahres */
+
+.contener {
+
+    width: 80%;
+    /* background-color: floralwhite; */
+    margin: auto;
+}
+
+.head {
+    /* width: 100%; */
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+}
+
+.head .logo {
+
+    width: 40%;
+    float: left;
+}
+
+.head .nav {
+    width: 60%;
+    float: left;
+    list-style: none;
+    padding-left: 90px;
+    text-align: right;
+    /* position: relative; */
+}
+
+.head .nav>li {
+    /* يجوا علي سطر واحد   li   ليه عشان كل اللي  li  بدي ال   */
+    display: inline-block;
+
+}
+
+
+
+.head .nav>li>a {
+    /* كامله   li  بديها بلوك ليه معناها املي المربع اللي انتي فيه يعني الي  */
+    text-decoration: none;
+    color: #fff;
+    padding: 24px 10px;
+    /* بلعب هنا من فوق ومن الجنب  */
+    display: block;
+    /* li  هتملئ ال  a هنا من الاخر ال  */
+    /* width: 75px; */
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+
+.head .nav>li>a.active:after,
+.head .nav>li>a:after {
+    content: "";
+    background-color:#6195ff;
+    height: 3px;
+    display: block;
+    transition: width 0.40s;
+    margin-top: 4px;
+}
+
+
+.head .nav>li>a.active:after {
+    /* active only هنا خصيت بالذكر ال  */
+    width: 100%;
+}
+
+.head .nav>li>a:after {
+    /*يساوي صفر   a  بعد اي  width هنا بقوله  */
+    width: 0;
+}
+
+.head .nav>li>a:hover::after {
+
+    /*  width: 100%  خلي ال a بقوله هنا اما اشاور علي اي  */
+    width: 100%;
+
+
+}
+
+.dropdown-m a {
+    position: relative;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown-m {
+    /* border: 2px dashed #fff; */
+    background-color: cornflowerblue;
+    width: 140px;
+    text-align: center;
+    padding: 12;
+    margin: 3px;
+    position: absolute;
+    right: 194px;
+    top: 80%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    border-radius: 4pxc;
+
+}
+
+.dropdown:hover .dropdown-m {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+.Home {
+
+    background-image: url(../images/background/background1.webp);
+    height: 100vh;
+    background-size: cover;
+    /* عشان الصوره تكون كويسه في الخلفيه */
+    position: relative;
+}
+
+.opacityy {
+
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    /*  عشان يملئ الاب كله */
+    width: 100vw;
+    top: 0;
+    /* عشان يبدا من الصفر ويملي الاب كله */
+    left: 0;
+
+    /* عملت ديف بحيث تدي لون خافت  */
+}
+
+
+.Home-content {
+    position: absolute;
+    color: aliceblue;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+
+}
+
+.Home .title {
+
+    font-size: 50px;
+    text-transform: uppercase;
+    font: size 4rem;
+    font-weight: bold;
+}
+
+.Home .Home-descrption {
+
+    padding: 10px;
+    word-spacing: 5px;
+    margin: 7px;
+}
+
+.Home-content .btn {
+    margin: 5px;
+    padding: 4px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    /* hand of mouse*/
+    border: 0;
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+.Home-content .bt-learn {
+    margin-left: 10px;
+    background-color: rgb(92, 92, 223);
+    color: aliceblue;
+}
+
+/* about sction */
+
+
+.about-contact {
+    width: 100%;
+    /* height: 150px; */
+    /* background-color: black; */
+}
+
+.about-item {
+    width: 30%;
+    float: left;
+    border: #888 3px solid;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+/* .about-item*/
+.mg {
+
+    margin: 0 5%;
+
+}
+
+.about-item .icon {
+    color: rgb(56, 73, 67);
+    padding-bottom: 10px;
+
+}
+
+.about-item .title,
+.about-item p,
+.about-item a {
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+
+.about-item a {
+    color: blue;
+}
+
+/* prtofolio */
+
+
+.prtoflio {
+
+    background-color: #f6f4f4;
+
+    height: 1000px;
+}
+
+.prtoflio-main {
+    float: left;
+
+}
+
+
+.prtoflio-item {
+
+    float: left;
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+}
+
+.prtoflio-item img {
+    width: 100%;
+}
+
+.one,
+.five {
+
+    margin: 0 5%;
+}
+
+
+.prtoflio-item .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* خانة الالفا بتتحكم في الاوبستي بخليه خافت او غير */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.prtoflio-item .layer-inf {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+
+
+}
+
+.prtoflio-item .layer-inf p {
+
+    color: rgb(96, 149, 196);
+    text-transform: capitalize;
+    font-size: 20px;
+    top: 10px;
+    transition: top 0.5s;
+    transition: delay 0.5s;
+    position: relative;
+    opacity: 0;
+    visibility: visible;
+
+}
+
+.prtoflio-item .layer-inf h3 {
+    color: #f6f4f4;
+    top: 10px;
+    transition: top 0.5s;
+    transition: delay 0.5s;
+    opacity: 0;
+
+    visibility: visible;
+
+    position: relative;
+}
+
+.prtoflio-item .layer-inf a {
+    top: 10px;
+    display: inline-block;
+    transition: delay 0.2s;
+    transition: top 0.5s;
+    position: relative;
+    opacity: 0;
+    visibility: visible;
+
+
+}
+
+.prtoflio-item .layer-inf i {
+    padding: 10px;
+    color: #fff;
+    background-color: rgb(94, 123, 182);
+    margin-top: 10px;
+}
+
+/* .prtoflio-item:hover .layer-inf {
+    opacity: 1;
+    visibility: visible;
+} */
+
+.prtoflio-item:hover .layer-inf p,
+.prtoflio-item:hover .layer-inf h3,
+.prtoflio-item:hover .layer-inf a {
+
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.8s;
+}
+
+.prtoflio-item:hover .layer {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* offer section */
+
+
+
+.offer-item .item {
+    width: 30%;
+    float: left;
+    border: var(--color-snow) solid 2px;
+    margin-bottom: 20px;
+    margin: 10px;
+    padding: 28px 10px 10px 55px;
+    position: relative;
+    height: 150px;
+}
+
+.offer-item .item .icon {
+
+    position: absolute;
+    top: 25px;
+    left: 10px;
+
+}
+
+.offer-item .item-title {
+
+    text-transform: capitalize;
+    margin-bottom: 20px;
+
+}
+
+.left-to {
+    position: relative;
+}
+
+.left-to:after {
+    content: "";
+    background-color: rgb(50, 45, 45);
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.left-to:hover:after {
+    width: 100%;
+
+}
+
+.left-to:hover .item-title,
+
+.left-to:hover .item-prgraph {
+
+    color: #fff;
+}
+
+.left-to:hover .icon {
+    color: aquamarine;
+}
+
+
+
+
+.service {
+    background-color: var(--color-snow);
+}
+
+.service .left {
+    width: 50%;
+    float: left;
+    margin-top: 35px;
+}
+
+.service .left .section-title {
+    text-align: left;
+}
+
+.service .left .line {
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+.service .left p {
+
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+.service .left .list {
+
+    list-style: none;
+    line-height: 30px;
+}
+
+.service .left ul li {
+    margin-bottom: 15px;
+}
+
+.service .left ul li .fa {
+    padding: 4px;
+    color: blue;
+    border: 2px solid #888;
+    border-radius: 50%;
+    margin-bottom: 3px;
+    margin-right: 4px;
+}
+
+.service .right-item img {
+    width: 100%;
+    margin-left: 20px;
+}
+
+
+.bolldes {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.bolldes .active {
+    background-color: rgb(50, 50, 129);
+
+}
+
+.bolldes li {
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    border-radius: 35%;
+    margin-left: 10px;
+    background-color: #888;
+}
+
+.bolldes li:hover {
+
+    background-color: rgb(50, 50, 129);
+    transition: 0.5s;
+}
+
+
+
+.numbers {
+
+    background-image: url(../images/background/background2.webp);
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 300px;
+}
+
+.numbers .number-item {
+    width: 20%;
+    height: 150px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+
+    padding-top: 30px;
+}
+
+.number-item .icons {
+    color: blue;
+    margin-top: 10px;
+
+}
+
+.number-item h4 {
+    font-size: 40px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.number-item p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+
+
+.pricing-item {
+    width: 30%;
+    height: 400px;
+    text-align: center;
+    /* background-color:rgba(255, 250, 250, 0.578); */
+    border: 2px solid var(--color-snow);
+    float: left;
+    position: relative;
+}
+
+.pricing-item .titlle {
+    padding-top: 10px;
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #888;
+}
+
+.pricing-item .month {
+
+    width: 110px;
+    height: 110px;
+    margin-top: 20px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid blue;
+}
+
+.pricing-item h4 {
+    padding-top: 20px;
+    font-size: 35px;
+}
+
+.pricing-item span {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pricing-item .list-support ul {
+    list-style: none;
+    padding-top: 10px;
+
+}
+
+.pricing-item .list-support li {
+
+    padding-top: 10px;
+    /* line-height: 25px; */
+}
+
+.pricing-item .zer {
+
+    margin-top: 20px;
+}
+
+.pricing-item .zer button {
+    font-size: 20px;
+    border: 0;
+    text-transform: capitalize;
+
+    border: 2px solid darkcyan;
+    padding: 10px;
+    color: darkcyan;
+    background-color: fff;
+    cursor: pointer;
+
+}
+
+
+.pricing-item::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    transition: 0.8s;
+}
+
+.pricing-item:hover.pricing-item::after {
+
+    background-color: var(--color-black);
+    height: 100%;
+    z-index: -1;
+
+}
+
+.pricing-item:hover .month {
+    color: #fff;
+}
+
+.pricing-item:hover .list-support ul {
+    color: #888;
+}
+
+
+.teem {
+    width: 100%;
+    height: 400px;
+    background-image: url(../images/background/background3.webp);
+    /* background-position: center; */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+
+.teem .chtcter {
+
+    width: 100%;
+    height: 400px;
+    /* background-color: antiquewhite; */
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 30px;
+
+
+}
+
+.teem .chtcter .personal {
+    width: 50%;
+    float: left;
+    padding-top: 50px;
+}
+
+.personal .personal-title {
+    width: 50%;
+    padding-left: 100px;
+    position: relative;
+}
+
+.personal-title .photo {
+
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+}
+
+.photo img {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+.title-person {
+    padding-top: 30px;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+
+}
+
+.jop {
+    padding-top: 5px;
+    padding-left: 10px;
+    color: rgb(107, 107, 230);
+
+}
+
+
+.descrip {
+    margin-top: 30px;
+    margin-left: 30px;
+    color: #fff;
+}
+
+
+
+
+/* our team */
+
+
+
+/* 
+
+
+.member {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.member-content {
+    width: 30%;
+    background-color: #e8e8e8;
+    text-align: center;
+    float: left;
+
+}
+
+.member-item {
+    width: 90%;
+    padding: 20px 10px;
+    margin: auto;
+    text-align: center;
+     
+
+}
+
+.photo-member{
+position: relative;
+}
+.photo-member img {
+    width: 100%;
+}
+
+.icon-member{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon-member a{
+    display: block; 
+    background-color: deepskyblue;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+
+}
+
+.icon-member i{
+    
+}
+
+
+.team-info .name-member {
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.jop-member {
+    margin: 20px 0;
+    color: #888;
+}
+
+.tb {
+
+    position: relative;
+}
+
+.tb::after {
+    position: absolute;
+    content: "";
+     width: 100%; 
+    height: 0px;
+    top: 0px;
+    background-color:#333;
+     display: block; 
+    transition: 0.5s;
+    z-index: -1;
+}
+
+
+.tb:hover::after {
+    height: 100%;
+    transition: 0.5s;
+}
+
+.member-content:hover .icon-member{
+    opacity: 1;
+    visibility: visible;
+} */
+
+
+.member {
+    width: 100%;
+}
+
+.member-item {
+    overflow: hidden;
+    width: 30%;
+    background-color: var(--color-snow);
+    text-align: center;
+    float: left;
+}
+
+.member-item .photo-member {
+    position: relative;
+    width: 90%;
+    margin: 20px 20px;
+
+
+}
+
+.photo-member img {
+    width: 100%;
+
+}
+
+.icon-member {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.member-item:hover .icon-member {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.member-item:hover .photo-member img {
+
+    opacity: 0.6;
+}
+
+
+.icon-member a {
+
+    display: block;
+    background-color: dodgerblue;
+    padding: 5px;
+
+}
+
+.icon-member a i {
+
+    width: 40px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.team-info {
+    margin: 12px;
+}
+
+.team-info .name-member {
+    /* margin-bottom: 10px; */
+    text-transform: capitalize;
+
+}
+
+.member-item.top-b {
+    z-index: 1;
+}
+
+.member-item:hover .name-member {
+    color: #f6f4f4;
+}
+
+.member-item:hover .jop-member {
+    color: dodgerblue;
+}
+
+/* Recent news */
+
+.Recent {
+    background-color: white;
+}
+
+.Recent-content {
+    width: 100%;
+}
+
+.Recent-item {
+    width: 30%;
+    overflow: hidden;
+    background-color: #fff;
+    float: left;
+
+}
+
+.R-photo {
+
+    width: 100%;
+
+}
+
+.R-photo img {
+    width: 100%;
+}
+
+.R-icons {
+    padding: 0px 10px;
+    margin: 20px 0px;
+}
+
+.R-icons i {
+    color: dodgerblue;
+    margin: 0px 3px;
+    padding: 3px;
+}
+
+.R-h h3 {
+    margin: 10px 0px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0px 20px;
+
+}
+
+.R-p {
+    margin: 15px 0px;
+    color: #888;
+    padding: 0px 20px;
+    line-height: 20px;
+    text-transform: capitalize;
+    word-spacing: 2px;
+    line-height: 20px;
+}
+
+.R-b {
+    padding: 0px 20px;
+    margin: 30px 0px;
+}
+
+.R-b button {
+    background: none;
+    border: none;
+    color: darkblue;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* Get in touvch */
+
+.Get-content {
+    overflow: hidden;
+
+}
+
+.Get-item {
+    float: left;
+    width: 30%;
+    text-align: center;
+
+}
+
+.Get-item i {
+
+    /* width: 50px;
+    height: 50px; */
+    color: #6195ff;
+}
+
+.Get-item h3 {
+
+    font-size: 20px;
+    margin: 10px 0px;
+
+
+}
+
+.Get-item span {
+    margin: 10px 0px;
+}
+
+
+.Get-item.mg span {
+    text-transform: capitalize;
+
+}
+
+.input {
+    text-align: center;
+}
+
+#name,
+#email {
+
+    width: 350px;
+    height: 40px;
+
+}
+
+
+#subject,
+#Massge {
+
+    width: 71%;
+    height: 40px;
+}
+
+#Massge {
+    height: 70px;
+}
+
+
+#name,
+#email,
+#subject,
+#Massge {
+
+    background-color: #ececece8;
+    border: none;
+    border-radius: 5px;
+    margin: 0px 0px 15px 0px;
+    opacity: 0.6;
+    /* font-style: italic; */
+
+}
+
+
+.input [type="text"] {
+    text-transform: capitalize;
+    color: var(--color-black);
+
+}
+
+
+
+
+.input ::placeholder {
+
+    color: var(--color-black);
+    font-size: larger;
+    opacity: 1;
+    padding: 0px 5px;
+}
+
+
+
+
+.Get button {
+
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    background-color: #6195ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+
+
+.footer {
+    background-color: var(--color-black);
+    text-align: center;
+    width: 100%;
+    height: 350px;
+}
+
+
+
+.footer-img img {
+    margin: 50px 0px;
+}
+
+.footer-icons ul {
+    list-style: none;
+}
+
+.footer-icons ul li {
+
+    display: inline-block;
+    margin: 10px;
+    background-color: #6195ff;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    padding: 15px 15px;
+    border-radius: 50%;
+
+}
+
+.footer-icons ul a {
+    transition: 0.5s;
+}
+
+.footer-icons ul a:hover {
+
+    opacity: 0.7;
+
+}
+
+
+
+
+

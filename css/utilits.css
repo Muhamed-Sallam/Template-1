@@ -1,0 +1,56 @@
+
+/*  واختصر وقت ومجهود  html الفكره عباره عن اني بحط الحاجات فيه كلاسات وارميها في ال  */
+/* بجمع كل المتكرر هنا  */
+
+/* هذا ماهو الا يسهل عليا لو حبيت اعدل علي حاجه  */
+
+
+.mg-b-5{
+
+margin-bottom: 5px;
+}
+.mg-b-10{
+
+margin-bottom: 10px;
+}
+.mg-b-15{
+
+margin-bottom: 15px;
+}
+.mg-b-20{
+
+margin-bottom: 20px;
+}
+
+.upercase{
+    text-transform: uppercase;
+}
+
+.captlize{
+
+    text-transform: capitalize;
+}
+
+.float-left{
+    float: left;
+}
+
+
+.overflow{
+    overflow: hidden;
+}
+
+/* ممكن اعمل هنا للعناصر اللي واخده 
+
+display inline 
+inline-block
+block
+
+*/
+
+
+/* ممكن استخدم برضوا 
+
+width 30%
+
+*/
